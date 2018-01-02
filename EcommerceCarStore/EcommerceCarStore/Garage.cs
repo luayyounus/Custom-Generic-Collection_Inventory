@@ -10,7 +10,7 @@ namespace EcommerceCarStore
         T[] items = new T[10];
         int count = 0;
 
-        public void Add(T item)
+        public void AddCustomed(T item)
         {
             if (count == (items.Length / 2))
             {
@@ -32,17 +32,35 @@ namespace EcommerceCarStore
 
         public void RemoveCustomed(T car)
         {
-            if (count == items.Length / 2)
+            T[] newArray = new T[items.Length];
+
+            int j = 0;
+            for (int i = 0; i < items.Length; i++)
             {
-                T[] newArray = new T[items.Length / 2];
-
-                for (int i = 0; i < items.Length; i++)
+                if (!items[i].Equals(car))
                 {
-                    newArray[i] = items[i];
+                    newArray[i] = items[j];
+                    j++;
                 }
-
-                //Cars[Count] = T;
+                else
+                {
+                    j++;
+                }
             }
+
+            items = newArray;
+        }
+
+        public int AtIndexOf(T car)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if (items[i].Equals(car))
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
 
         public IEnumerator<T> GetEnumerator()

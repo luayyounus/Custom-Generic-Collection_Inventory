@@ -17,6 +17,9 @@ namespace EcommerceCarStore
 
 
             // Using List Methods
+            Console.WriteLine("\n---Using List methods---" +
+                              "\n------------------------");
+
             List<Car> cars = new List<Car>();
             cars.Add(bmw);
             cars.Add(mercedes);
@@ -37,24 +40,32 @@ namespace EcommerceCarStore
             }
 
             // Using Garage Methods
+            Console.WriteLine("\n---Using Collection initializer methods---" +
+                              "\n------------------------------------------");
+
             Garage<Car> garage = new Garage<Car>();
-            garage.Add(bmw);
-            garage.Add(mercedes);
-            garage.Add(audi);
+            garage.AddCustomed(bmw);
+            garage.AddCustomed(mercedes);
+            garage.AddCustomed(audi);
 
             Console.WriteLine("\n Before Deleting BMW");
-            foreach (Car car in cars)
+            foreach (Car car in garage)
             {
                 Console.WriteLine($"Car:{car.Name} - Type:{car.Type}");
             }
 
-            cars.Remove(bmw);
+            garage.RemoveCustomed(bmw);
 
             Console.WriteLine("\n After Deleting BMW");
-            foreach (Car car in cars)
+            foreach (Car car in garage)
             {
                 Console.WriteLine($"Car:{car.Name} - Type:{car.Type}");
             }
+
+            Console.WriteLine("\n---Stretch Goal Get Index of item in Collection---" +
+                              "\n------------------------------------------");
+            int index = garage.AtIndexOf(mercedes);
+            Console.WriteLine($"{mercedes.Name} is at index {index}");
 
             Console.ReadLine();
         }
