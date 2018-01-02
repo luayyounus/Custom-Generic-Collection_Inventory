@@ -30,15 +30,15 @@ namespace EcommerceCarStore
             count++;
         }
 
-        public void RemoveCustomed(T car)
+        public void RemoveCustomed(T item)
         {
-            T[] newArray = new T[items.Length];
-
             int j = 0;
+            T[] newArray = new T[items.Length / 2];
             for (int i = 0; i < items.Length; i++)
             {
-                if (!items[i].Equals(car))
+                if (!item.Equals(items[j]))
                 {
+                    if (j > count) return;
                     newArray[i] = items[j];
                     j++;
                 }
@@ -47,8 +47,20 @@ namespace EcommerceCarStore
                     j++;
                 }
             }
-
             items = newArray;
+            //if (count == (items.Length / 2))
+            //{
+            //    int j = 0;
+            //    for (int i = 0; i < items.Length; i++)
+            //    {
+            //        if (!item.Equals(items[j]))
+            //        {
+
+            //        }
+            //        newArray[i] = items[i];
+            //    }
+            //    count--;
+            //}
         }
 
         public int AtIndexOf(T car)
