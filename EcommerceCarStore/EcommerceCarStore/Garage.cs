@@ -7,30 +7,49 @@ namespace EcommerceCarStore
 {
     class Garage<T> : IEnumerable<T>
     {
-        T[] _cars = new T[10];
-        private int _count = 0;
+        T[] items = new T[10];
+        int count = 0;
 
-        public void Add(T car)
+        public void Add(T item)
         {
-            if (_count == (_cars.Length / 2))
+            if (count == (items.Length / 2))
             {
-                T[] newArray = new T[_cars.Length * 2];
+                T[] newArray = new T[items.Length * 2];
 
-                for (int i = 0; i < _cars.Length; i++)
+                for (int i = 0; i < items.Length; i++)
                 {
-                    newArray[i] = _cars[i];
+                    newArray[i] = items[i];
                 }
 
-                _cars[_count] = car;
-                _count++;
+                items = newArray;
+
+            }
+            items[count] = item;
+
+
+            count++;
+        }
+
+        public void RemoveCustomed(T car)
+        {
+            if (count == items.Length / 2)
+            {
+                T[] newArray = new T[items.Length / 2];
+
+                for (int i = 0; i < items.Length; i++)
+                {
+                    newArray[i] = items[i];
+                }
+
+                //Cars[Count] = T;
             }
         }
 
         public IEnumerator<T> GetEnumerator()
         {
-            for (int i = 0; i < _count; i++)
+            for (int i = 0; i < count; i++)
             {
-                yield return _cars[i];
+                yield return items[i];
             }
         }
 

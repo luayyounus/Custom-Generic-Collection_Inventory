@@ -6,11 +6,11 @@ namespace EcommerceCarStore
 {
     class Car
     {
-        private byte Id { get; set; }
-        private string Name { get; set; }
-        private CarType Type { get; set; }
-        private string Color { get; set; }
-        private int Year { get; set; }
+        public byte Id { get; set; }
+        public string Name { get; set; }
+        public CarType Type { get; set; }
+        public string Color { get; set; }
+        public int Year { get; set; }
 
         public Car(byte id, string name, CarType carType, string color, int year)
         {
