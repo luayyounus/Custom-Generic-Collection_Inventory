@@ -30,7 +30,7 @@ namespace EcommerceStore.Classes
         public void Remove(T item)
         {
             T[] newArray = new T[Items.Length];
-            if (Count - 1 == Items.Length / 2)
+            if (Count - 1 <= Items.Length / 2)
             {
                 newArray = new T[Items.Length / 2];
             }
