@@ -33,6 +33,34 @@ namespace EcommerceStore.Classes
             Count++;
         }
 
+        public void RemoveCustomed(T item)
+        {
+            T[] newArray = new T[Items.Length];
+            if (Count - 1 == Items.Length / 2)
+            {
+                newArray = new T[Items.Length / 2];
+            }
+
+            int j = 0;
+            int tempCount = Count;
+            for (int i = 0; i < tempCount; i++)
+            {
+                if (j > tempCount) break;
+                if (!item.Equals(Items[j]))
+                {
+                    newArray[i] = Items[j];
+                    j++;
+                }
+                else
+                {
+                    Count--;
+                    i--;
+                    j++;
+                }
+            }
+            Items = newArray;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < Count; i++)
