@@ -4,7 +4,7 @@
 **Version**: 1.0
 
 ## Overview
-An Ecommerce store that demonstrates creating Array Add/Remove/AtIndex methods throw Collection initializers. Xunit tests are written to prove the List resizing mechanism.
+An Ecommerce store that demonstrates creating Array Add/Remove/AtIndex methods through Collection initializers. Xunit tests are written to prove the List resizing mechanism.
 
 ## Requirements to run the Application
 - [Visual Studio 2017 Community with .NET Core 2.0 SDK](https://www.microsoft.com/net/core#windowscmd)
