@@ -8,7 +8,7 @@ namespace EcommerceStore.Classes
 {
     public class Inventory<T> : IEnumerable<T>
     {
-        public T[] Items = new T[10];
+        public T[] Items = new T[2];
         public int Count = 0;
 
         public void Add(T item)
@@ -40,7 +40,7 @@ namespace EcommerceStore.Classes
             int tempCount = Count;
             for (int i = 0; i < tempCount; i++)
             {
-                if (j > tempCount) break;
+                if (j >= tempCount) break;
                 if (!item.Equals(Items[j]))
                 {
                     newArray[i] = Items[j];

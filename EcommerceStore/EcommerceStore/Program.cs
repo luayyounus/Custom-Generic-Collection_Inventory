@@ -58,7 +58,7 @@ namespace EcommerceStore
             // Finding Batman Index
             Console.WriteLine("\n    Getting Index of Batman Movie");
             Console.WriteLine("-------------------------------");
-            Console.WriteLine("     The index is: {0}", inventory.AtIndexOf(product9));
+            Console.WriteLine("     The index is: {0}", inventory.AtIndexOf(product8));
 
             Console.ReadLine();
         }

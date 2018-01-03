@@ -32,7 +32,7 @@ namespace XUnitTestEcommerceStore
             inventory.Remove(product); // Resizing to half after removing
 
             // Assert
-            Assert.Equal(5, inventory.Items.Length);
+            Assert.Equal(1, inventory.Items.Length);
         }
 
         [Fact]
