@@ -5,16 +5,10 @@ using System.Text;
 
 namespace EcommerceStore.Classes
 {
-    class Inventory<T>:IEnumerable<T>
+    class Inventory<T> : IEnumerable<T>
     {
-        private T[] Items;
-        private int Count;
-
-        public Inventory(int numberOfItems, int count)
-        {
-            Items = new T[numberOfItems];
-            Count = count;
-        }
+        public T[] Items = new T[10];
+        public int Count = 0;
 
         public void Add(T item)
         {
@@ -33,7 +27,7 @@ namespace EcommerceStore.Classes
             Count++;
         }
 
-        public void RemoveCustomed(T item)
+        public void Remove(T item)
         {
             T[] newArray = new T[Items.Length];
             if (Count - 1 == Items.Length / 2)

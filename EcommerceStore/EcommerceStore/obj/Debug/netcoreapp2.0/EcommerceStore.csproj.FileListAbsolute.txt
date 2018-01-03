@@ -1,0 +1,11 @@
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\EcommerceStore\bin\Debug\netcoreapp2.0\EcommerceStore.deps.json
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\EcommerceStore\bin\Debug\netcoreapp2.0\EcommerceStore.runtimeconfig.json
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\EcommerceStore\bin\Debug\netcoreapp2.0\EcommerceStore.runtimeconfig.dev.json
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\EcommerceStore\bin\Debug\netcoreapp2.0\EcommerceStore.dll
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\EcommerceStore\obj\Debug\netcoreapp2.0\EcommerceStore.csprojResolveAssemblyReference.cache
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\EcommerceStore\obj\Debug\netcoreapp2.0\EcommerceStore.csproj.CoreCompileInputs.cache
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\EcommerceStore\obj\Debug\netcoreapp2.0\EcommerceStore.AssemblyInfoInputs.cache
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\EcommerceStore\obj\Debug\netcoreapp2.0\EcommerceStore.AssemblyInfo.cs
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\EcommerceStore\bin\Debug\netcoreapp2.0\EcommerceStore.pdb
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\EcommerceStore\obj\Debug\netcoreapp2.0\EcommerceStore.dll
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\EcommerceStore\obj\Debug\netcoreapp2.0\EcommerceStore.pdb
