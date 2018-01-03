@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EcommerceStore.Classes
 {
-    class Product
+    public class Product
     {
         public string Name { get; set; }
         public ProductType Type { get; set; }

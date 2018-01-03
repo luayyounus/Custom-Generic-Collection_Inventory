@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EcommerceStore.Classes
 {
-    class Inventory<T> : IEnumerable<T>
+    public class Inventory<T> : IEnumerable<T>
     {
         public T[] Items = new T[10];
         public int Count = 0;
