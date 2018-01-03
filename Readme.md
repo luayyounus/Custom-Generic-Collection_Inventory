@@ -109,7 +109,7 @@ public int AtIndexOf(T item)
 }
 ```
 
-#### The Inventory app consists of two classes as the following
+#### The Inventory app consists of a product class that uses a product Enum
 ###### Product
 ```C#
 public class Product
@@ -175,6 +175,7 @@ public void Throw_Exception_When_Product_Not_Found()
 
     // Act & Assert
     Assert.Throws<InvalidOperationException>(() => inventory.AtIndexOf(product));
+}
 ```
 
 ## Architecture
