@@ -16,6 +16,23 @@ namespace EcommerceStore.Classes
             Count = count;
         }
 
+        public void Add(T item)
+        {
+            if (Count == (Items.Length / 2))
+            {
+                T[] newArray = new T[Items.Length * 2];
+
+                for (int i = 0; i < Items.Length; i++)
+                {
+                    newArray[i] = Items[i];
+                }
+
+                Items = newArray;
+            }
+            Items[Count] = item;
+            Count++;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < Count; i++)
