@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace EcommerceStore.Classes
@@ -64,7 +65,7 @@ namespace EcommerceStore.Classes
                     return i;
                 }
             }
-            return -1;
+            throw new InvalidOperationException();
         }
 
         public IEnumerator<T> GetEnumerator()

@@ -25,7 +25,7 @@ namespace XUnitTestEcommerceStore
         {
             // Arrange
             Product product = new Product("Computer", ProductType.Home);
-            Inventory<Product> inventory = new Inventory<Product>();
+            Inventory<Product> inventory = new Inventory<Product>(); // Initializes an inventory array of [10]
 
             // Act
             inventory.Add(product);
@@ -33,6 +33,17 @@ namespace XUnitTestEcommerceStore
 
             // Assert
             Assert.Equal(5, inventory.Items.Length);
+        }
+
+        [Fact]
+        public void Throw_Exception_When_Product_Not_Found()
+        {
+            // Arrange
+            Product product = new Product("Computer", ProductType.Home);
+            Inventory<Product> inventory = new Inventory<Product>();
+
+            // Act & Assert
+            Assert.Throws<InvalidOperationException>(() => inventory.AtIndexOf(product));
         }
     }
 }
