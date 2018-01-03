@@ -1,45 +1,184 @@
-![cf](http://i.imgur.com/7v5ASc8.png) Lab 7 : Collections Practice
-=====================================
+# Generic Collections
 
-## To Submit this Assignment
-- fork this repository
-- create a new branch named `lab01-`; + `<your name>` **e.g.** `lab06-amanda`
-- write your code
-- push to your repository
-- submit a pull request to this repository
-- submit a link to your PR in canvas
-- Include a Readme.md (contents described below)
+**Author**: Luay Younus
+**Version**: 1.0
 
-## Directions
-- Create a custom generic list for an e-commerce store to hold an inventory of products
-- Include an enum in your *Product* (i.e. ProductType)
-- Make sure the generic has the functionality to use a foreach loop.
-- Your generic collection should include `Add()`, `Remove()` items in the collection
-- Make it so you can `ViewAll` and create a method to output all items to the console
-- Add at least 10 items to your List, and output them to the console.
-    - Add some items through the `Add()` Method, and others through a *collection initializer* 
+## Overview
+An Ecommerce store that demonstrates creating Array Add/Remove/AtIndex methods throw Collection initializers. Xunit tests are written to prove the List resizing mechanism.
 
-### Stretch
-- include an AtIndexOf method in your collection. Have it return the index of that item in the Collection. 
+## Requirements to run the Application
+- [Visual Studio 2017 Community with .NET Core 2.0 SDK](https://www.microsoft.com/net/core#windowscmd)
+- [GitBash / Terminal](https://git-scm.com/downloads) or [GitHub Extension for Visual Studio](https://visualstudio.github.com)
 
-## ReadMe
-A README is a module consumer's first -- and maybe only -- look into your creation. The consumer wants a module to fulfill their need, so you must explain exactly what need your module fills, and how effectively it does so.
-<br />
-Your job is to
+## Getting Started
+1. Clone the repository to your local machine.
+2. Cd into the application directory where the `AppName.sln` exist.
+3. Open the application using `Open/Start AppName.sln`.
+4. Once Visual Studio is opened, you can Run the application by clicking on the Play button <img src="https://github.com/luayyounus/Lab02-Unit-Testing/blob/Lab02-Luay/WarCardGame/play-button.jpg" width="16"> .
+5. A demo will be presented showing both C# built in Arrays Vs. custom array through Collection Initializers in Console statements.
 
-1. tell them what it is (with context)
-2. show them what it looks like in action
-3. show them how they use it
-4. tell them any other relevant details
-<br />
+## Inventory Explanation
+###### Inventory class is implementing the custom Array method by first implementing `IEnumerable`
+`public class Inventory<T> : IEnumerable<T>`
 
-This is ***your*** job. It's up to the module creator to prove that their work is a shining gem in the sea of slipshod modules. Since so many developers' eyes will find their way to your README before anything else, quality here is your public-facing measure of your work.
+###### The class consists of the following main properties giving the Array a size of 2 for a start
+```C#
+public T[] Items = new T[2];
+public int Count = 0;
+```
 
-<br /> <br /> Refer to the sample-README in the class repo for an example. 
-- [Reference](https://github.com/noffle/art-of-readme)
+###### The two required `IEnumerable` methods are implemented as the following
+```C#
+public IEnumerator<T> GetEnumerator()
+{
+    for (int i = 0; i < Count; i++)
+    {
+        yield return Items[i];
+    }
+}
 
-## Rubric
-- 7pts: Program meets all requirements described in Lab directions
-- 3pts: Code meets industry standards
+IEnumerator IEnumerable.GetEnumerator()
+{
+    return GetEnumerator();
+}
+```
 
-- **Readme.md required for submission. Missing readme document and tests will result in a best score of 2/10**
+###### Add method implementation, increasing the Array size when more Items are added
+```C#
+public void Add(T item)
+{
+    if (Count == (Items.Length / 2))
+    {
+        T[] newArray = new T[Items.Length * 2];
+
+        for (int i = 0; i < Items.Length; i++)
+        {
+            newArray[i] = Items[i];
+        }
+
+        Items = newArray;
+    }
+    Items[Count] = item;
+    Count++;
+}
+```
+
+###### Remove method implementation, decreasing the Array size when Items are removed
+```C#
+public void Remove(T item)
+{
+    T[] newArray = new T[Items.Length];
+    if (Count - 1 <= Items.Length / 2)
+    {
+        newArray = new T[Items.Length / 2];
+    }
+
+    int j = 0;
+    int tempCount = Count;
+    for (int i = 0; i < tempCount; i++)
+    {
+        if (j >= tempCount) break;
+        if (!item.Equals(Items[j]))
+        {
+            newArray[i] = Items[j];
+            j++;
+        }
+        else
+        {
+            Count--;
+            i--;
+            j++;
+        }
+    }
+    Items = newArray;
+}
+```
+
+###### Getting Index for an Item
+```C#
+public int AtIndexOf(T item)
+{
+    for (int i = 0; i < Count; i++)
+    {
+        if (Items[i].Equals(item))
+        {
+            return i;
+        }
+    }
+    throw new InvalidOperationException();
+}
+```
+
+#### The Inventory app consists of two classes as the following
+###### Product
+```C#
+public class Product
+{
+    public string Name { get; set; }
+    public ProductType Type { get; set; }
+
+    public Product(string name, ProductType type)
+    {
+        Name = name;
+        Type = type;
+    }
+}
+```
+###### Product Enum
+```C#
+public enum ProductType
+{
+    Movies,
+    Home,
+    Health,
+    Grocery
+}
+```
+
+#### The following are the Test Cases implemented to check different Scenarios
+```C#
+[Fact]
+public void Return_Equal_Inventory_Count_When_Adding()
+{
+    // Arrange
+    Product product = new Product("Computer", ProductType.Home);
+    Inventory<Product> inventory = new Inventory<Product>();
+
+    // Act
+    inventory.Add(product);
+
+    // Assert
+    Assert.Equal(1, inventory.Count);
+}
+
+[Fact]
+public void Return_Inventory_Half_Size_When_Removing()
+{
+    // Arrange
+    Product product = new Product("Chair", ProductType.Home);
+    Inventory<Product> inventory = new Inventory<Product>();
+
+    // Act
+    inventory.Add(product);
+    inventory.Remove(product); // Resizing array to half after removing
+
+    // Assert
+    Assert.Equal(1, inventory.Items.Length);
+}
+
+[Fact]
+public void Throw_Exception_When_Product_Not_Found()
+{
+    // Arrange
+    Product product = new Product("Table", ProductType.Home);
+    Inventory<Product> inventory = new Inventory<Product>();
+
+    // Act & Assert
+    Assert.Throws<InvalidOperationException>(() => inventory.AtIndexOf(product));
+```
+
+## Architecture
+ - C# Console Core application.
+ - Inventory Class that implements Add/Remove/AtIndex methods.
+ - Product Class.
+ - Enum for Product Types.
