@@ -24,12 +24,12 @@ namespace XUnitTestEcommerceStore
         public void Return_Inventory_Half_Size_When_Removing()
         {
             // Arrange
-            Product product = new Product("Computer", ProductType.Home);
-            Inventory<Product> inventory = new Inventory<Product>(); // Initializes an inventory array of [10]
+            Product product = new Product("Chair", ProductType.Home);
+            Inventory<Product> inventory = new Inventory<Product>();
 
             // Act
             inventory.Add(product);
-            inventory.Remove(product); // Resizing to half after removing
+            inventory.Remove(product); // Resizing array to half after removing
 
             // Assert
             Assert.Equal(1, inventory.Items.Length);
@@ -39,7 +39,7 @@ namespace XUnitTestEcommerceStore
         public void Throw_Exception_When_Product_Not_Found()
         {
             // Arrange
-            Product product = new Product("Computer", ProductType.Home);
+            Product product = new Product("Table", ProductType.Home);
             Inventory<Product> inventory = new Inventory<Product>();
 
             // Act & Assert
