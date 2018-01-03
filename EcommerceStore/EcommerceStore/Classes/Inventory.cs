@@ -61,6 +61,18 @@ namespace EcommerceStore.Classes
             Items = newArray;
         }
 
+        public int AtIndexOf(T item)
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                if (Items[i].Equals(item))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < Count; i++)
