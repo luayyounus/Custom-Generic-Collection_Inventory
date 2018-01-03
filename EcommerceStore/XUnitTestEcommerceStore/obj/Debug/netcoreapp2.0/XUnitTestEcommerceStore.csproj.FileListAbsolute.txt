@@ -1,0 +1,16 @@
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\bin\Debug\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\bin\Debug\netcoreapp2.0\XUnitTestEcommerceStore.deps.json
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\bin\Debug\netcoreapp2.0\XUnitTestEcommerceStore.runtimeconfig.json
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\bin\Debug\netcoreapp2.0\XUnitTestEcommerceStore.runtimeconfig.dev.json
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\bin\Debug\netcoreapp2.0\XUnitTestEcommerceStore.dll
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\bin\Debug\netcoreapp2.0\XUnitTestEcommerceStore.pdb
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\bin\Debug\netcoreapp2.0\EcommerceStore.dll
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\bin\Debug\netcoreapp2.0\EcommerceStore.pdb
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\obj\Debug\netcoreapp2.0\XUnitTestEcommerceStore.csprojResolveAssemblyReference.cache
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\obj\Debug\netcoreapp2.0\XUnitTestEcommerceStore.csproj.CoreCompileInputs.cache
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\obj\Debug\netcoreapp2.0\XUnitTestEcommerceStore.AssemblyInfoInputs.cache
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\obj\Debug\netcoreapp2.0\XUnitTestEcommerceStore.AssemblyInfo.cs
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\obj\Debug\netcoreapp2.0\XUnitTestEcommerceStore.dll
+C:\Users\Luay\Dropbox\401dotNet\Projects\Labs\Lab07-CustomCollection\EcommerceStore\XUnitTestEcommerceStore\obj\Debug\netcoreapp2.0\XUnitTestEcommerceStore.pdb
