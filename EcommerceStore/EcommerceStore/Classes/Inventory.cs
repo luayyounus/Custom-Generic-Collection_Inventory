@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace EcommerceStore.Classes
 {
-    class Inventory<T> : IEnumerable<T>
+    public class Inventory<T> : IEnumerable<T>
     {
-        public T[] Items = new T[10];
+        public T[] Items = new T[2];
         public int Count = 0;
 
         public void Add(T item)
@@ -30,7 +31,7 @@ namespace EcommerceStore.Classes
         public void Remove(T item)
         {
             T[] newArray = new T[Items.Length];
-            if (Count - 1 == Items.Length / 2)
+            if (Count - 1 <= Items.Length / 2)
             {
                 newArray = new T[Items.Length / 2];
             }
@@ -39,7 +40,7 @@ namespace EcommerceStore.Classes
             int tempCount = Count;
             for (int i = 0; i < tempCount; i++)
             {
-                if (j > tempCount) break;
+                if (j >= tempCount) break;
                 if (!item.Equals(Items[j]))
                 {
                     newArray[i] = Items[j];
@@ -64,7 +65,7 @@ namespace EcommerceStore.Classes
                     return i;
                 }
             }
-            return -1;
+            throw new InvalidOperationException();
         }
 
         public IEnumerator<T> GetEnumerator()
