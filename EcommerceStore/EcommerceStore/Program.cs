@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using EcommerceStore.Classes;
 
 namespace EcommerceStore
@@ -25,7 +26,7 @@ namespace EcommerceStore
             };
 
             Console.WriteLine("\n    Using List Add Method");
-            Console.WriteLine("---------------------------------");
+            Console.WriteLine("------------------------------------------------------------------------");
 
             // Adding 10 Items with List.Add
             Console.WriteLine("\n Adding 10 items to Inventory");
@@ -36,6 +37,28 @@ namespace EcommerceStore
             productsList.Remove(product9);
             productsList.Remove(product10);
             ViewAllProducts(productsList);
+
+            Inventory<Product> inventory = new Inventory<Product>();
+
+            Console.WriteLine("\n    Using Inventory Add, Remove, AtIndex methods");
+            Console.WriteLine("------------------------------------------------------------------------");
+
+            // Adding 10 Items with Inventory.Add
+            Console.WriteLine("\n Adding 10 items to Inventory");
+            inventory.Add(product1); inventory.Add(product2); inventory.Add(product3); inventory.Add(product4); inventory.Add(product5);
+            inventory.Add(product6); inventory.Add(product7); inventory.Add(product8); inventory.Add(product9); inventory.Add(product10);
+            ViewAllProducts(inventory.Items.OfType<Product>().ToList());
+
+            // Removing Health Products with Inventory.Remove
+            Console.WriteLine("\n    Removing Health Products");
+            inventory.Remove(product9);
+            inventory.Remove(product10);
+            ViewAllProducts(inventory.Items.OfType<Product>().ToList());
+
+            // Finding Batman Index
+            Console.WriteLine("\n    Getting Index of Batman Movie");
+            Console.WriteLine("-------------------------------");
+            Console.WriteLine("     The index is: {0}", inventory.AtIndexOf(product8));
 
             Console.ReadLine();
         }
